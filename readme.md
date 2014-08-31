@@ -36,6 +36,26 @@ The plugin can be used like any other jQuery plugin:
 
 $('css-selector').mobileMenu({option:value, option:value});
 
+--------use this with modernizr:-----------------
+Modernizr.load(
+  {
+    // if less than 600px, load the script
+    test: Modernizr.mq('only screen and (max-width: 600px)'),
+    yep: ['js/jquery.{version}.js', 'js/'jquery.mobilemenu.js'],
+    complete: function() {
+      document.ready(function() {
+        $('#mainNav').moblieMenu({
+          switchWidth: 600,
+          topOptionText: 'Select a page',
+          indentString: '&nbsp;&nbsp;&nbsp;'
+        });
+      });
+    };
+  }
+);
+
+-------------------------------------------------
+
 ## Licence
 There isn't one, because I'm nice.
 Feel free to say "thanks" or attribute the script to this page if you find it useful.
